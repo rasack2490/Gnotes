@@ -1,0 +1,10 @@
+@extends('layout.master')
+@section('left_nav')
+    @include('includes.admin.left_nav')
+@endsection
+@section('top_nav')
+    @include('includes.admin.top_nav')
+@endsection
+@section('statistique')
+    @include('includes.admin.statistiques')
+@endsection

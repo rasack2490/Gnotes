@@ -3,6 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Facades\DB;
 
 class CreateUsersTable extends Migration
 {
@@ -22,7 +23,12 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->unsignedBigInteger('numero');
             $table->boolean('role');
-            $table->timestamps();
+            $table->string('classe_id')->nullable();
+            $table->string('annee')->nullable();
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP'))->nullable()->onUpdate();
+
+
             /*$table->id();
             $table->string('name');
             $table->string('email')->unique();

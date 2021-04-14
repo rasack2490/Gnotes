@@ -1,9 +1,9 @@
   <!-- Sidebar - Brand -->
   <a class="sidebar-brand align-items-center justify-content-center mb-5" href="index.html">
 
-                
+
                 <img src="assets/img/logo.png" alt="" class="logo">
-                
+
                 <!--div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-laugh-wink"></i>
                 </!--div>
@@ -38,8 +38,8 @@
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header"></h6>
-                        <a class="collapse-item" href="buttons.html">Professeur</a>
-                        <a class="collapse-item" href="cards.html">Eleve</a>
+                        <a class="collapse-item" href="{{URL::route('addprof')}}">Professeur</a>
+                        <a class="collapse-item" href="{{URL::route('addstudent')}}">Eleve</a>
                         <a class="collapse-item" href="cards.html">Classe</a>
                         <a class="collapse-item" href="cards.html">Matiere</a>
                     </div>
@@ -64,7 +64,7 @@
                     </div>
                 </div>
             </li>
-            
+
             <hr class="sidebar-divider">
 
             <!-- Heading -->
@@ -82,12 +82,12 @@
                     data-parent="#collapseUtilities">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header"></h6>
-                        <a class="collapse-item" href="utilities-color.html">Année scolaire</a>
+                        <a class="collapse-item" href="{{URL::route('addyear')}}">Année scolaire</a>
                     </div>
                 </div>
             </li>
 
-            
+
             <hr class="sidebar-divider d-none d-md-block">
 
             <!-- Sidebar Toggler (Sidebar) -->
@@ -96,4 +96,4 @@
             </div>
 
             <!-- Sidebar Message -->
-            
+

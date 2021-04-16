@@ -31,6 +31,8 @@ class CreateElevesTable extends Migration
             $table->bigInteger('phone_besoin');
             $table->string('nom_pere');
             $table->string('nom_mere');
+            $table->string('classe_id');
+            
             /*$table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP onupdate CURRENT_TIMESTAMP'));*/
             $table->timestamp('created_at')->useCurrent();

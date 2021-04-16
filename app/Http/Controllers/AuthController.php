@@ -46,21 +46,23 @@ class AuthController extends Controller
         $controll = DB::select('select id_user, role from users where email=?', [ $request->input('email')]);
         $user = User::find($controll[0]->id_user);
 
-        //print_r($user);
+        
         if (Hash::check($request->input('password'), $user->password)) {
             // Success
-            $info = User::all();
-            if($info[0]->role == true){
+            $info = User::find($controll[0]->id_user);
+            
+            //dd($info->role);
+            if($info->role == true){
 
                 Session(['info'=>$info]);
                 
                 //dd(Session::get('info', $info));
                 return view('super_admin_links.dasboard', ['info'=>$info]);
-            }elseif($info[0]->role == false){
-                session_start();
+            }elseif($info->role == false){
+                Session(['info'=>$info]);
 
                 return view('admin_links.dashboard', ['info'=>$info]);
-            }elseif($info[0]->role != true && $info[0]->role != false){
+            }elseif($info->role != true && $info->role != false){
                 return view('login.admin_log')->with('successMsg','Vos informations sont incorrect .');
             }
 
@@ -70,11 +72,11 @@ class AuthController extends Controller
 
     }
     public function logout(){
-        auth()->logout();
+        Session::flush();
         return redirect('/');
     }
     public function logoutsuper(){
-        auth()->logout();
+        Session::flush();
         return redirect()->route('logadmin');
     }
 }

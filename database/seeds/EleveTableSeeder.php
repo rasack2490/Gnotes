@@ -14,7 +14,7 @@ class EleveTableSeeder extends Seeder
     {
         //
         DB::table('eleves')->insert([
-            ['id'=>1, 'nom'=>'NANA', 'prenom'=>'abdoul razack', 'email'=>'razack@gmail.com', 'matricule'=>'MB2010', 'password'=>bcrypt('123'), 'nationalite'=>'burkinabe', 'naissance'=>'12/10/2000', 'sexe'=>'true', 'ville'=>'ouagadougou', 'telephone'=>'71344116', 'adresse'=>'saaba', 'phone_besoin'=>'70294400', 'nom_pere'=>'NANA malik', 'nom_mere'=>'DJIRE Mariam' ]
+            ['id'=>1, 'nom'=>'NANA', 'prenom'=>'abdoul razack', 'email'=>'razack@gmail.com', 'matricule'=>'MB2010', 'password'=>bcrypt('123'), 'nationalite'=>'burkinabe', 'naissance'=>'12/10/2000', 'sexe'=>'true', 'ville'=>'ouagadougou', 'telephone'=>'71344116', 'adresse'=>'saaba', 'phone_besoin'=>'70294400', 'nom_pere'=>'NANA malik', 'nom_mere'=>'DJIRE Mariam', 'classe_id'=>'5ème' ]
         ]);
     }
 }

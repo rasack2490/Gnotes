@@ -25,3 +25,6 @@ Route::post('/ajoutprof', 'GestionCompteController@addprofform')->name('dataprof
 Route::get('/anneeScolaire', 'GestionCompteController@addyear')->name('addyear');
 Route::post('/anneeScolaire', 'GestionCompteController@datayear')->name('datayear');
 Route::get('/ajouteleve', 'GestionCompteController@addstudent')->name('addstudent');
+Route::post('/ajouteleve', 'GestionCompteController@savestudent')->name('savestudent');
+Route::get('/profile', 'GestionCompteController@showprofile')->name('showprofile');
+Route::post('/profileedit', 'GestionCompteController@editprofile')->name('editprofile');

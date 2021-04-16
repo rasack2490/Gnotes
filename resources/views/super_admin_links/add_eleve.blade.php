@@ -12,10 +12,10 @@
     @endif
         <div class="card">
             <div class="card-header">
-            <i class="bi bi-plus-square"></i> Ajouter un professeur principal
+            <i class="bi bi-plus-square"></i> Ajouter un eleve
             </div>
             <div class="card-body">
-                <form action="{{route('dataprof')}}" method="post"  enctype="multipart/form-data">
+                <form action="{{route('savestudent')}}" method="post"  enctype="multipart/form-data">
                 @csrf
                     <div class="container">
                         <div class="row">
@@ -39,19 +39,15 @@
                                 <input type="text" class="form-control mb-3"  placeholder="Prenom" name="prenom">
                                 <input type="email" class="form-control mb-3"  placeholder="Email" name="email">
                                 <input type="text" class="form-control mb-3"  placeholder="Numero" name="telephone">
-                                <div class="form-group">
-                                    <label for="browser" class="d-block">Choisir la classe du professeur:</label>
-                                    <input list="browsers" name="classe" id="browser" class="form-control ">
-                                    <datalist id="browsers">
-                                        @foreach($classe as $classe)
-                                            <option value="{{$classe->list_classe}}">
-                                        @endforeach
 
-                                    </datalist>
 
-                                </div>
-                                <div class="form-group">
-                                    <label for="annee" class="d-block">Choisir le type de l'année scolaire:</label>
+
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-6">
+                            <div class="form-group">
+                                    <label for="annee" class="d-block">Choisir l'année scolaire:</label>
                                     <input list="annees" name="annee" id="annee" class="form-control ">
                                     <datalist id="annees">
                                         @foreach($annee as $annee)
@@ -61,8 +57,39 @@
                                     </datalist>
 
                                 </div>
-                                <button type="submit" class="btn btn-primary">Submit</button>
+                                <div class="form-group">
+                                    <label for="browser" class="d-block">Choisir la classe de l'eleve:</label>
+                                    <input list="browsers" name="classe" id="browser" class="form-control ">
+                                    <datalist id="browsers">
+                                        @foreach($classe as $classe)
+                                            <option value="{{$classe->list_classe}}">
+                                        @endforeach
+
+                                    </datalist>
+
+                                </div>
+                                <input type="text" class="form-control mb-3"  placeholder="Nationalite" name="nation">
+                                <input type="text" class="form-control mb-3"  placeholder="Ville" name="ville">
+
                             </div>
+                            <div class="col-lg-6">
+                            <input type="text" class="form-control mb-3"  placeholder="Numero personne a prevenir en cas de besoin" name="numero">
+                                <input type="text" class="form-control mb-3"  placeholder="Adresse" name="adresse">
+                                <input type="text" class="form-control mb-3"  placeholder="Nom du pere" name="pere">
+                                <input type="text" class="form-control mb-3"  placeholder="Nom de la mere" name="mere">
+                                <input type="date" class="form-control mb-3"  placeholder="Naissance" name="naissance">
+                                <div class="form-group">
+                                    <label for="sex" class="d-block">Sexe:</label>
+                                    <input list="sexes" name="sex" id="sex" class="form-control ">
+                                    <datalist id="sexes">
+                                            <option value="Homme">
+                                            <option value="Femme">
+                                    </datalist>
+
+                                </div>
+
+                            </div>
+                            <button type="submit" class="btn btn-primary">Submit</button>
                         </div>
                     </div>
                 </form>
